@@ -50,7 +50,8 @@ h2 {
 }
 
 .option-btn:hover {
-    border-color: #583E8E;
+    transform: scale(1.07);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .option-btn.selected {
@@ -79,3 +80,4 @@ h2 {
 .navigation button:hover {
     background-color: #6e50b4;
 }
+
