@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>formulario</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="header.css">
+</head>
+<body>
+    <div class="form-container">
+        <div id="question-number">Pergunta 1 de 2</div>
+        <h2 id="question-text">O gustavo é o mais legal?</h2>
+
+        <div id="options-container" class="options-grid">
+            <!-- opções no js -->
+        </div>
+
+        <div class="navigation">
+            <button id="prev-btn" onclick="prevQuestion()">? Voltar</button>
+            <button id="next-btn" onclick="nextQuestion()">Próxima ?</button>
+        </div>
+    </div>
+
+    <script>
+        // As pergunta vao tá assim
+        const questions = [
+            {
+                question: "O gustavo é o mais legal?",
+                options: ["Sim", "Claro", "Óbvio", "Perfeito", "Com certeza", "Yes", "Sim"]
+            },
+            {
+                question: "Segunda pergunta?",
+                options: ["A", "B"]
+            }
+        ];
+
+        let currentQuestion = 0;
+        const selections = [];
+
+        function loadQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById("question-number").textContent = `Pergunta ${currentQuestion + 1} de ${questions.length}`;
+            document.getElementById("question-text").textContent = q.question;
+
+            const container = document.getElementById("options-container");
+            container.innerHTML = "";
+
+            q.options.forEach(option => {
+                const btn = document.createElement("button");
+                btn.className = "option-btn";
+                btn.textContent = option;
+                btn.onclick = () => {
+                    btn.classList.toggle("selected");
+                };
+                container.appendChild(btn);
+            });
+
+            document.getElementById("prev-btn").style.display = currentQuestion === 0 ? "none" : "inline-block";
+            document.getElementById("next-btn").textContent = currentQuestion === questions.length - 1 ? "Terminar" : "Próxima ?";
+        }
+
+        function nextQuestion() {
+            saveSelections();
+            if (currentQuestion < questions.length - 1) {
+    currentQuestion++;
+    loadQuestion();
+} else {
+    saveSelections();
+    // Aqui você pode salvar no localStorage se quiser usar os dados depois
+    console.log("Respostas:", selections);
+    window.location.href = "header.html"; // Redireciona para a página desejada
+}
+
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion();
+            }
+        }
+
+        function saveSelections() {
+            const selected = Array.from(document.querySelectorAll(".option-btn.selected")).map(btn => btn.textContent);
+            selections[currentQuestion] = selected;
+        }
+
+        // Inicialização
+        loadQuestion();
+    </script>
+</body>
+</html>
