@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Calend·rio de Eventos</title>
+    <title>Calend√°rio de Eventos</title>
     <link rel="stylesheet" href="calendario.css">
     <link rel="stylesheet" href="header.css"> 
 </head>
@@ -11,23 +11,25 @@
     <header class="top-header">
       <div class="left-section">
         <div class="logo-area">
-          <img src="logo_icon.png" alt="Õcone Empresa" class="icon">
+          <a href="header.html" class="botao-link">
+          <img src="logo_icon.png" alt="√çcone Empresa" class="icon">
+          </a>
           <span class="company-name">Nome empresa</span>
         </div>
 
         <div class="search-box">
           <input type="text" placeholder="Pesquisar...">
           <button class="btn-search">
-            <img src="pesquisa_icon.png" alt="Õcone Buscar">
+            <img src="pesquisa_icon.png" alt="√çcone Buscar">
           </button>
           <button class="btn-voice">
-            <img src="microfone_icon.png" alt="Õcone Microfone">
+            <img src="microfone_icon.png" alt="√çcone Microfone">
           </button>
         </div>
       </div>
 
       <div class="user-avatar">
-        <img src="account_icon.png" alt="Avatar Usu·rio">
+        <img src="account_icon.png" alt="Avatar Usu√°rio">
       </div>
     </header>
 
@@ -50,23 +52,23 @@
         </div>
 
         <div class="events-container">
-            <h3>PrÛximos eventos</h3>
+            <h3>Pr√≥ximos eventos</h3>
             <div class="event-list">
                 <div class="event">
-                    <strong>13 Jun ï Palestra Mulheres</strong>
-                    <p>Palestra com dicas para m„es de primeira viagem.</p>
+                    <strong>13 Jun ‚Ä¢ Palestra Mulheres</strong>
+                    <p>Palestra com dicas para m√£es de primeira viagem.</p>
                 </div>
                 <div class="event">
-                    <strong>24 Jun ï Palestra M„e informada</strong>
-                    <p>InformaÁıes jurÌdicas sobre guarda, pens„o e proteÁ„o legal.</p>
+                    <strong>24 Jun ‚Ä¢ Palestra M√£e informada</strong>
+                    <p>Informa√ß√µes jur√≠dicas sobre guarda, pens√£o e prote√ß√£o legal.</p>
                 </div>
                 <div class="event">
-                    <strong>5 Jul ï Encontro de FamÌlias</strong>
-                    <p>Atividades l˙dicas e informativas com especialistas.</p>
+                    <strong>5 Jul ‚Ä¢ Encontro de Fam√≠lias</strong>
+                    <p>Atividades l√∫dicas e informativas com especialistas.</p>
                 </div>
                 <div class="event">
-                    <strong>15 Jul ï Paternidade Ativa</strong>
-                    <p>Palestra voltada para pais presentes na criaÁ„o dos filhos.</p>
+                    <strong>15 Jul ‚Ä¢ Paternidade Ativa</strong>
+                    <p>Palestra voltada para pais presentes na cria√ß√£o dos filhos.</p>
                 </div>
             </div>
         </div>
@@ -81,7 +83,7 @@
         let currentMonth = currentDate.getMonth();
         let currentYear = currentDate.getFullYear();
 
-        const monthNames = ['Janeiro', 'Fevereiro', 'MarÁo', 'Abril', 'Maio', 'Junho', 
+        const monthNames = ['Janeiro', 'Fevereiro', 'Mar√ßo', 'Abril', 'Maio', 'Junho', 
                             'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 
         function populateMonthYearSelects() {
