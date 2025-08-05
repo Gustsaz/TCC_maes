@@ -9,24 +9,24 @@
 <body>
     <div class="form-container">
         <div id="question-number">Pergunta 1 de 2</div>
-        <h2 id="question-text">O gustavo é o mais legal?</h2>
+        <h2 id="question-text">O gustavo Ã© o mais legal?</h2>
 
         <div id="options-container" class="options-grid">
-            <!-- opções no js -->
+            <!-- opÃ§Ãµes no js -->
         </div>
 
         <div class="navigation">
             <button id="prev-btn" onclick="prevQuestion()">? Voltar</button>
-            <button id="next-btn" onclick="nextQuestion()">Próxima ?</button>
+            <button id="next-btn" onclick="nextQuestion()">PrÃ³xima ?</button>
         </div>
     </div>
 
     <script>
-        // As pergunta vao tá assim
+        // As pergunta vao tÃ¡ assim
         const questions = [
             {
-                question: "O gustavo é o mais legal?",
-                options: ["Sim", "Claro", "Óbvio", "Perfeito", "Com certeza", "Yes", "Sim"]
+                question: "O gustavo Ã© o mais legal?",
+                options: ["Sim", "Claro", "Ã“bvio", "Perfeito", "Com certeza", "Yes", "Sim"]
             },
             {
                 question: "Segunda pergunta?",
@@ -56,7 +56,7 @@
             });
 
             document.getElementById("prev-btn").style.display = currentQuestion === 0 ? "none" : "inline-block";
-            document.getElementById("next-btn").textContent = currentQuestion === questions.length - 1 ? "Terminar" : "Próxima ?";
+            document.getElementById("next-btn").textContent = currentQuestion === questions.length - 1 ? "Terminar" : "PrÃ³xima ?";
         }
 
         function nextQuestion() {
@@ -66,9 +66,9 @@
     loadQuestion();
 } else {
     saveSelections();
-    // Aqui você pode salvar no localStorage se quiser usar os dados depois
+    //saolva os dados
     console.log("Respostas:", selections);
-    window.location.href = "header.html"; // Redireciona para a página desejada
+    window.location.href = "header.html";
 }
 
         }
@@ -85,7 +85,7 @@
             selections[currentQuestion] = selected;
         }
 
-        // Inicialização
+        // comeÃ§a as questao
         loadQuestion();
     </script>
 </body>
