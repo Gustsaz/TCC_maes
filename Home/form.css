@@ -37,16 +37,16 @@ h2 {
 }
 
 .option-btn {
-    background-color: #3a3a50;
-    border: 2px solid transparent;
+    background-color: rgba(255, 255, 255, 0.61);
+    border: 2px solid #583E8E;
     border-radius: 8px;
     padding: 14px;
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
-    color: white;
-    font-family: "Nunito", sans-serif;
+    color: #583E8E;
+    font-family: "Nunito", sans-serif, bold;
 }
 
 .option-btn:hover {
@@ -57,6 +57,7 @@ h2 {
 .option-btn.selected {
     background-color: #583E8E;
     border-color: #fff;
+    color: white;
 }
 
 .navigation {
