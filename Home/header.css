@@ -119,42 +119,39 @@ body {
 /*BOTÔES*/
 .botoes {
   display: flex;
-  justify-content: center;    
-  gap: 16px;
-  padding: 20px 10px;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .botao-item {
-  background-color: #fff;
-  border: 1.5px solid #d6d1e9;
-  border-radius: 16px;
-  width: 80px;
-  height: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-family: "Nunito", sans-serif;
-  font-size: 13px;
-  color: #6a4ca4;
+  background: white;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 90px;
   cursor: pointer;
-
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s;
 }
 
 .botao-item:hover {
-  transform: scale(1.07);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transform: scale(1.05);
 }
 
 .botao-item img {
   width: 40px;
   height: 40px;
-  margin-bottom: 6px;
 }
 
+.botao-item span {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+}
 
 /*RESPONSIVIDADE*/
 /*tablet */
@@ -244,7 +241,7 @@ body {
 
 .search-box {
   animation: fadeSlideDown 0.6s ease-out forwards;
-  animation-delay: 0.2s
+  animation-delay: 0.2s;
   opacity: 0;
 }
 
@@ -270,4 +267,35 @@ body {
   animation: fadeSlideDown 0.6s ease-out forwards;
   animation-delay: 0.2s;
   opacity: 0;
+}
+
+.card{
+  opacity: 0;
+  animation: fadeSlideDown 0.6s ease-out forwards;
+}
+
+.card:first-child{
+  animation-delay: 0.4s;
+}
+
+.card:last-child {
+  animation-delay: 0.55s;
+}
+
+.categoria {
+  opacity: 0;
+  animation: fadeSlideLeft 0.4s ease-out forwards;
+}
+
+.categoria:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.categoria:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.categoria:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.categoria:nth-child(4) {
+  animation-delay: 0.4s;
 }
