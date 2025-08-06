@@ -17,7 +17,7 @@ body {
   color: inherit;
 }
 
-/*HEADER*/
+/*header*/
 .top-header {
   width: 100%;
   margin: 0 auto;
@@ -106,7 +106,7 @@ body {
   cursor: pointer;
 }
 
-/*BODY*/
+/*body*/
 .divisor{
   width: 100%;
   height: 1px;
@@ -116,44 +116,48 @@ body {
   margin-top: 5px;
 }
 
-/*BOTÔES*/
+/*botaos*/
 .botoes {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    flex-wrap: nowrap;           
+    overflow-x: auto;           
 }
 
 .botao-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: white;
-  padding: 10px;
-  border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  width: 90px;
-  cursor: pointer;
-  transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-width: 80px;           
+    cursor: pointer;
+    transition: transform 0.2s;
+    flex-shrink: 0;             
 }
 
 .botao-item:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .botao-item img {
-  width: 40px;
-  height: 40px;
+    width: 40px;
+    height: 40px;
 }
 
 .botao-item span {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #333;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
 }
 
-/*RESPONSIVIDADE*/
+
+/*responsividade*/
+
 /*tablet */
 @media (max-width: 768px) {
   .top-header {
