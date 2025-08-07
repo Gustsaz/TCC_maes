@@ -13,7 +13,7 @@
         <div class="left-section">
             <div class="logo-area">
                 <a href="header.html" class="botao-link">
-                    <img src="logo_icon.png" alt="Ícone Empresa" class="icon">
+                    <img src="logo_icon.png" alt="Ãcone Empresa" class="icon">
                 </a>
                 <span class="company-name">Nome empresa</span>
             </div>
@@ -21,16 +21,16 @@
             <div class="search-box">
                 <input type="text" placeholder="Pesquisar...">
                 <button class="btn-search">
-                    <img src="pesquisa_icon.png" alt="Ícone Buscar">
+                    <img src="pesquisa_icon.png" alt="Ãcone Buscar">
                 </button>
                 <button class="btn-voice">
-                    <img src="microfone_icon.png" alt="Ícone Microfone">
+                    <img src="microfone_icon.png" alt="Ãcone Microfone">
                 </button>
             </div>
         </div>
 
         <div class="user-avatar">
-            <img src="account_icon.png" alt="Avatar Usuário">
+            <img src="account_icon.png" alt="Avatar UsuÃ¡rio">
         </div>
     </header>
 
@@ -43,8 +43,8 @@
         </a>
         <a href="forum.html" class="botao-link">
             <div class="botao-item">
-                <img src="forum_icon.png" alt="Fórum">
-                <span>Fórum</span>
+                <img src="forum_icon.png" alt="FÃ³rum">
+                <span>FÃ³rum</span>
             </div>
         </a>
         <a href="artigos.html" class="botao-link">
@@ -55,41 +55,59 @@
         </a>
         <a href="calendario.html" class="botao-link">
             <div class="botao-item">
-                <img src="calend_icon.png" alt="Calendário">
-                <span>Calendário</span>
+                <img src="calend_icon.png" alt="CalendÃ¡rio">
+                <span>CalendÃ¡rio</span>
             </div>
         </a>
     </div>
 
     <div class="conteudo-home">
 
-        <div class="card-destaque">
+        <div class="card-destaque com-brilho animar-entrada" style="animation-
+
+delay: 0.1s;">
     <img src="dicaHome_banner.png" alt="Imagem destaque">
     <a href="#" class="botao-acao">Ver artigo</a>
 </div>
 
 
-        <div class="card-oportunidade">
+        <div class="card-oportunidade com-brilho animar-entrada" style="animation-
+
+delay: 0.3s;">
             <div class="imagem">
                 <img src="oportunidade1_img.png" alt="Imagem oportunidade">
             </div>
             <div class="texto">
                 <h3>Oportunidade de Trabalho</h3>
-                <p>Vagas abertas para assistente técnico em TI</p>
+                <p>Vagas abertas para assistente tÃ©cnico em TI</p>
                 <a href="#" class="botao-acao pequeno">Saiba mais..</a>
             </div>
         </div>
     </div>
 
 <section class="depoimentos">
-            <div class="depoimento">
-                <p>Estou me sentindo tão sozinha nos últimos tempos...</p>
-                <span>Anônimo</span>
+            <div class="depoimento animar-entrada" style="animation-delay: 0.5s;">
+                <p>Estou me sentindo tÃ£o sozinha nos Ãºltimos tempos...</p>
+                <span>AnÃ´nimo</span>
             </div>
-            <div class="depoimento">
-                <p>Estou me sentindo tão sozinha nos últimos tempos...</p>
-                <span>Anônimo</span>
+            <div class="depoimento animar-entrada" style="animation-delay: 0.7s;">
+                <p>Estou me sentindo tÃ£o sozinha nos Ãºltimos tempos...</p>
+                <span>AnÃ´nimo</span>
             </div>
-        </section</body>
-</html>
+        </section>
 
+<script>
+    document.querySelectorAll('.com-brilho').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+</script>
+
+</body>
+</html>
