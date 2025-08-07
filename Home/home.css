@@ -112,7 +112,7 @@ body {
 
 .depoimentos {
     display: flex;
-    gap: 20px;
+    gap: 15%;
     justify-content: center;
     flex-wrap: wrap;
 }
