@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Calendário de Eventos</title>
-    <link rel="stylesheet" href="calendario.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fórum de Mães</title>
+    <link rel="stylesheet" href="forum.css">
     <link rel="stylesheet" href="header.css">
 </head>
-
 <body>
-
     <header class="top-header">
         <div class="left-section">
             <div class="logo-area">
@@ -34,8 +32,6 @@
             <img src="account_icon.png" alt="Avatar Usuário">
         </div>
     </header>
-
-    <div class="divisor"></div>
 
     <div class="botoes">
     <a href="consultoria.html" class="botao-link">
@@ -67,139 +63,29 @@
       </a>
   </div>
 
-    <div class="container">
-        <div class="calendar-container">
-            <div class="calendar-header">
-                <button onclick="prevMonth()"><</button>
-                        <div class="month-year-select">
-                            <select id="month-select" onchange="onMonthChange()"></select>
-                            <select id="year-select" onchange="onYearChange()"></select>
-                        </div>
-                        <button onclick="nextMonth()">></button>
-            </div>
-            <div class="calendar-days">
-                <div>D</div>
-                <div>S</div>
-                <div>T</div>
-                <div>Q</div>
-                <div>Q</div>
-                <div>S</div>
-                <div>S</div>
-            </div>
-            <div class="calendar-dates" id="calendarDates"></div>
+    <main class="forum-container">
+        <div class="left-image animar">
+            <img src="ftmae2_icon.png" alt="Mães unidas">
         </div>
+        <div class="right-content">
+            <h1 class="animar">Mães que apoiam Mães</h1>
+            <p class="descricao animar">Compartilhando experiências, desafios e 
 
-        <div class="events-container">
-            <h3>Próximos eventos</h3>
-            <div class="event-list">
-                <div class="event">
-                    <strong>13 Jun • Palestra Mulheres</strong>
-                    <p>Palestra com dicas para mães de primeira viagem.</p>
-                </div>
-                <div class="event">
-                    <strong>24 Jun • Palestra Mãe informada</strong>
-                    <p>Informações jurídicas sobre guarda, pensão e proteção legal.</p>
-                </div>
-                <div class="event">
-                    <strong>5 Jul • Encontro de Famílias</strong>
-                    <p>Atividades lúdicas e informativas com especialistas.</p>
-                </div>
-                <div class="event">
-                    <strong>15 Jul • Paternidade Ativa</strong>
-                    <p>Palestra voltada para pais presentes na criação dos filhos.</p>
-                </div>
+conquistas</p>
+
+            <div class="mensagem animar">
+                <p>Cada desafio sendo mãe é superado com amor</p>
+                <img src="placeholder.png" alt="Ícone comentário">
             </div>
+
+            <div class="mensagem animar">
+                <p>Preciso de dicas para amamentação</p>
+                <img src="placeholder.png" alt="Ícone comentário">
+            </div>       
         </div>
-    </div>
+    </main>
 
-    <script>
-        const calendarDates = document.getElementById('calendarDates');
-        const monthSelect = document.getElementById('month-select');
-        const yearSelect = document.getElementById('year-select');
+    <button class="botao-nova">Nova Publicação</button>
 
-        const currentDate = new Date();
-        let currentMonth = currentDate.getMonth();
-        let currentYear = currentDate.getFullYear();
-
-        const monthNames = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
-            'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
-
-        function populateMonthYearSelects() {
-            monthSelect.innerHTML = '';
-            yearSelect.innerHTML = '';
-
-            monthNames.forEach((month, index) => {
-                const opt = document.createElement('option');
-                opt.value = index;
-                opt.textContent = month;
-                if (index === currentMonth) opt.selected = true;
-                monthSelect.appendChild(opt);
-            });
-
-            for (let y = 2000; y <= 2030; y++) {
-                const opt = document.createElement('option');
-                opt.value = y;
-                opt.textContent = y;
-                if (y === currentYear) opt.selected = true;
-                yearSelect.appendChild(opt);
-            }
-        }
-
-        function renderCalendar(month, year) {
-            const firstDay = new Date(year, month, 1).getDay();
-            const lastDate = new Date(year, month + 1, 0).getDate();
-
-            calendarDates.innerHTML = '';
-
-            for (let i = 0; i < firstDay; i++) {
-                calendarDates.innerHTML += `<div class="empty"></div>`;
-            }
-
-            for (let i = 1; i <= lastDate; i++) {
-                const today = new Date();
-                const isToday = i === today.getDate() &&
-                    month === today.getMonth() &&
-                    year === today.getFullYear();
-
-                calendarDates.innerHTML += `<div class="date ${isToday ? 'today' : ''}">${i}</div>`;
-            }
-
-            // atualiza os selects
-            monthSelect.value = month;
-            yearSelect.value = year;
-        }
-
-        function prevMonth() {
-            currentMonth--;
-            if (currentMonth < 0) {
-                currentMonth = 11;
-                currentYear--;
-            }
-            renderCalendar(currentMonth, currentYear);
-        }
-
-        function nextMonth() {
-            currentMonth++;
-            if (currentMonth > 11) {
-                currentMonth = 0;
-                currentYear++;
-            }
-            renderCalendar(currentMonth, currentYear);
-        }
-
-        function onMonthChange() {
-            currentMonth = parseInt(monthSelect.value);
-            renderCalendar(currentMonth, currentYear);
-        }
-
-        function onYearChange() {
-            currentYear = parseInt(yearSelect.value);
-            renderCalendar(currentMonth, currentYear);
-        }
-
-        populateMonthYearSelects();
-        renderCalendar(currentMonth, currentYear);
-    </script>
 </body>
-
 </html>
