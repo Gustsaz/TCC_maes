@@ -1,172 +1,150 @@
+:root {
+  --rox: #583E8E;
+  --bg: #F9F7FC;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Nunito', sans-serif;
-    background-color: #f5f1fc;
-    color: #333;
-    overflow-x: hidden;
-    overflow-y: auto;
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--bg);
+  color: #333;
 }
 
-button,
-select {
-    font-family: 'Nunito', sans-serif;
+.botao-link { text-decoration: none; color: inherit; }
+
+.forum-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 40px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-@keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+.left-image img {
+  width: 280px;
+  height: auto;
+  display: block;
 }
 
-.calendar-container {
-    background-color: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    box-sizing: border-box;
+.right-content { max-width: 520px; }
+
+.right-content h1 {
+  color: var(--rox);
+  font-size: 28px;
+  margin: 0 0 8px;
+  text-align: center;           
 }
 
-.calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #583E8E;
-    margin-bottom: 20px;
+.descricao {
+  color: var(--rox);
+  font-size: 14px;
+  margin: 0 0 24px;
+  text-align: center;
 }
 
-.calendar-header button {
-    background: none;
-    border: none;
-    color: #583E8E;
-    font-size: 20px;
-    cursor: pointer;
+.mensagem {
+  background: #fff;
+  border: 1px solid #E0E0E0;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
 }
 
-.month-year-select {
-    display: flex;
-    gap: 10px;
+.mensagem p { margin: 0; line-height: 1.25; }
+.mensagem img { width: 24px; height: 24px; }
+
+.botao-nova {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;                   
+  transform: translateX(-50%);
+  right: auto;
+  padding: 14px 24px;
+  font-size: 16px;
+  background-color: var(--rox);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: 1000;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
 }
 
-.month-year-select select {
-    background: #f1eaff;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 5px 8px;
-    color: #333;
-    font-size: 14px;
-    outline: none;
+.botao-nova::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  background: rgba(255, 255, 255, 0.07);
+  transition: top 0.6s ease;
+  z-index: 0;
+  border-radius: 50%;
 }
 
-.calendar-days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    text-align: center;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #666;
-}
+.botao-nova:hover::before { top: -50%; }
+.botao-nova:hover { background-color: #3e2f69; color: #fff; }
 
-.calendar-dates {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    text-align: center;
-    gap: 10px;
-}
-
-.calendar-dates .date {
-    padding: 10px 0;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.calendar-dates .date:hover { background-color: #e0d4fa; }
-.calendar-dates .today { background-color: #583E8E; color: white; }
-.calendar-dates .empty { visibility: hidden; }
-
-.events-container {
-    width: 300px;
-    box-sizing: border-box;
-}
-
-.events-container h3 {
-    color: #583E8E;
-    margin-bottom: 15px;
-}
-
-.event-list {
-    max-height: 400px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding-right: 10px;
-}
-
-.event-list::-webkit-scrollbar { width: 6px; }
-.event-list::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; 
-
-}
-
-.event {
-    background-color: white;
-    border-left: 5px solid #583E8E;
-    border-radius: 8px;
-    padding: 12px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.05);
-}
-.event strong { display: block; margin-bottom: 5px; color: #333; }
-.event p { margin: 0; font-size: 14px; color: #555; }
-
-.container > * {
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
-}
-.container > *:nth-child(1) { animation-delay: 0s; }
-.container > *:nth-child(2) { animation-delay: 0.2s; }
-.container > *:nth-child(3) { animation-delay: 0.4s; }
-.container > *:nth-child(4) { animation-delay: 0.6s; }
-
-.container {
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-    gap: 50px;
-    flex-wrap: wrap;
-}
-
+/*Tablet*/
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-        gap: 25px;
-    }
+  .forum-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+    padding: 24px 20px;
+  }
 
-    .calendar-container,
-    .events-container {
-        width: 100%;          
-        max-width: 420px;     
-    }
+  .left-image img { width: 220px; }
+  .right-content { max-width: 620px; width: 100%; }
 
-    .event-list {
-        max-height: calc(2 * 90px); 
-        overflow-y: auto;           
-    }
-
-    .events-container h3 {
-        text-align: center;
-    }
+  .mensagem {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+  }
 }
 
+/*celular*/
 @media (max-width: 480px) {
-    .calendar-container { padding: 15px; }
-    .calendar-dates { gap: 5px; }
-    .calendar-dates .date { padding: 8px 0; font-size: 13px; }
-    .month-year-select select { font-size: 12px; padding: 4px 6px; }
+  .forum-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px;
+    max-width: 420px;
+  }
 
-    .events-container { padding: 0 6px; }
-    .event strong { font-size: 14px; }
-    .event p { font-size: 12px; }
+  .left-image img {
+    width: 170px;
+    margin: 0 auto;
+  }
+
+  .right-content { width: 100%; }
+
+  .right-content h1 { font-size: 22px; }
+  .descricao { font-size: 13px; }
+
+  .mensagem {
+    width: 100%;
+    font-size: 13px;
+    padding: 12px 14px;
+  }
+
+  .botao-nova {
+    bottom: 16px;
+    width: calc(100% - 32px);   
+    max-width: 420px;
+    border-radius: 14px;
+  }
 }
