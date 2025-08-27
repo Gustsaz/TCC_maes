@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro - Mãe</title>
+  <title>Cadastro - Psicólogo</title>
   <link rel="stylesheet" href="cad.css">
 </head>
 <body>
 
   <div class="cadastro-container">
     <div class="cadastro-box">
-      <img src="logo_icon.png" alt="Logo mãe" class="logo">
+      <img src="logo_icon.png" alt="Logo" class="logo">
 
       <h2>Registre sua conta</h2>
       <p class="subtexto">Sua rede de acolhimento e suporte começa aqui</p>
@@ -27,19 +27,26 @@
         </div>
 
         <div class="input-group">
-          <img src="pass_icon.png" alt="icone" class="icon">
-          <input type="password" placeholder="Crie uma senha:" name="senha" required>
+          <img src="crp_icon.png" alt="icone" class="icon">
+          <input type="text" placeholder="CRP: (identificação psicól.)" name="crp" required>
         </div>
 
-        <div class="input-group">
-          <img src="pass_icon.png" alt="icone" class="icon">
-          <input type="password" placeholder="Repita a senha:" name="senha2" required>
+        <div class="senha-linha">
+          <div class="input-group">
+            <img src="pass_icon.png" alt="icone" class="icon">
+            <input type="password" placeholder="Senha:" name="senha" required>
+          </div>
+
+          <div class="input-group">
+            <img src="pass_icon.png" alt="icone" class="icon">
+            <input type="password" placeholder="Repita a senha:" name="senha2" required>
+          </div>
         </div>
 
         <button type="submit" class="btn-cadastrar">Cadastrar</button>
       </form>
 
-      <p class="login-link">Já possui conta? <a href="logMae.html">Entrar</a></p>
+      <p class="login-link">Já possui conta? <a href="logPsi.html">Entrar</a></p>
     </div>
   </div>
 

@@ -13,7 +13,7 @@ body {
     align-items: center;
 }
 
-.cadastro-container {
+.login-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,7 @@ body {
     width: 100%;
 }
 
-.cadastro-box {
+.login-box {
     background: #fff;
     padding: 30px 40px;
     border-radius: 12px;
@@ -36,7 +36,7 @@ body {
     margin-bottom: 15px;
 }
 
-.cadastro-box h2 {
+.login-box h2 {
     color: #583E8E;
     margin-bottom: 8px;
 }
@@ -71,7 +71,7 @@ body {
     background: transparent;
 }
 
-.btn-cadastrar {
+.btn-logar {
     width: 100%;
     padding: 12px;
     background: #583E8E;
@@ -83,75 +83,38 @@ body {
     transition: 0.3s;
 }
 
-.btn-cadastrar:hover {
+.btn-logar:hover {
     background: #432e6a;
 }
 
-.login-link {
+.cad-link {
     margin-top: 12px;
     font-size: 13px;
     color: #664F9F;
 }
 
-.login-link a {
+.cad-link a {
     color: #583E8E;
     font-weight: bold;
     text-decoration: none;
 }
 
-.login-link a:hover { 
-    text-decoration: underline; 
-} 
-
-/*linha da senha dividida igualmente*/ 
-
-.senha-linha { 
-    display: flex; 
-    gap: 10px; 
-} 
-
-.senha-linha .input-group {
-    flex: 1; 
-} 
-
-/*linha de input dividida 1 maior e outra menor*/ 
-
-.linha-dupla {
-    display: flex; 
-    gap: 10px; 
-} 
-
-.linha-dupla .input-group {
-    flex: 2; 
-} 
-
-.linha-dupla .input-group.pequeno {
-    flex: 1; 
+.cad-link a:hover {
+    text-decoration: underline;
 }
 
-/*termos de aceite*/
-
-.senha-linha .input-group {
-    margin-bottom: 10px;
+.forgot-pass {
+    text-align: right;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    font-size: 13px;
 }
 
-.aceite-termos {
-    text-align: left;
-    margin: 8px 0 15px 2px;
+.forgot-pass a {
+    color: #664F9F;
+    text-decoration: none;
 }
 
-.aceite-termos label,
-.aceite-termos p {
-    opacity: 0.53;
-    font-size: 12px;
-}
-
-.aceite-termos input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    border-radius: 4px; /* arredonda o check */
-    accent-color: #583E8E; /* deixa roxo igual o botão */
-    cursor: pointer;
-    margin-right: 5px;
-    vertical-align: middle;
+.forgot-pass a:hover {
+    text-decoration: underline;
 }
