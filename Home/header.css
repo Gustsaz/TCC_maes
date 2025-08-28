@@ -1,0 +1,153 @@
+@font-face {
+  font-family: "Nunito";
+  src: url("Nunito.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f2ff;
+  font-family: "Nunito", sans-serif;
+}
+
+.botao-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.top-header {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f5f2ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 10px;
+  height: 70px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  row-gap: 5px;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-area .icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.company-name {
+  color: #583E8E;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1.5px solid #d6d1e9;
+  border-radius: 50px;
+  overflow: hidden;
+  width: 320px;
+  height: 40px;
+  transition: width 0.3s ease;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  width: 100%;
+  font-size: 15px;
+  font-family: "Nunito", sans-serif;
+}
+
+.search-box button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.search-box button img {
+  width: 20px;
+  height: 20px;
+  margin-top: 25%;
+  margin-right: 10%;
+}
+
+.user-avatar {
+  margin-right: 5px;
+}
+
+.user-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.divisor {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.10);
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
+}
+
+.botoes {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.botao-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 80px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.botao-item:hover {
+  transform: scale(1.05);
+}
+
+.botao-item img {
+  width: 40px;
+  height: 40px;
+}
+
+.botao-item span {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+}

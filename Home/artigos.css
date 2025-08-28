@@ -1,0 +1,103 @@
+body {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  background-color: #f7f2fc;
+}
+
+.divisor {
+  height: 2px;
+  background-color: #ddd;
+  margin: 10px 0;
+}
+
+.categorias {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.categoria {
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.3s;
+  font-family: 'Nunito', sans-serif;
+}
+
+.categoria:hover {
+  background-color: #e0d6f6;
+}
+
+.categoria.ativa {
+  background-color: #583E8E;
+  color: white;
+  border-color: #583E8E;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 30px 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 20px;
+  transition: transform 0.3s;
+}
+
+.card:first-child {
+  width: 550px;
+  height: 280px;
+  align-items: center;
+}
+
+.card:first-child .card-img {
+  width: 220px;
+  height: 220px;
+}
+
+.card:last-child {
+  width: 370px;
+  height: 180px;
+  align-items: center;
+  align-self: center;
+}
+
+.card-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.card-text h3 {
+  font-size: 20px;
+  color: #583E8E;
+  margin: 0;
+}
+
+.card-text p {
+  font-size: 15px;
+  color: #444;
+  margin: 8px 0;
+}
+
+.card-text a {
+  color: #583E8E;
+  font-size: 14px;
+  text-decoration: none;
+}
