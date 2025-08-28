@@ -22,8 +22,27 @@ body {
     min-height: 100vh;
 }
 
+body {
+    position: relative;
+}
+
+
 main {
     position: relative;
+}
+
+.detalhe-lateral {
+    position: absolute;
+    top: 600px;
+    right: 0;
+    width: 360px;
+    bottom: 60px; 
+    background: url("det_img.png") repeat-y right top;
+    background-size: 360px auto;
+    background-position: right top;
+    opacity: 0.45;
+    pointer-events: none;
+    z-index: -20;
 }
 
 .intro-section {
@@ -282,6 +301,7 @@ main {
     max-height: 65%;
 }
 
+
 .col-icon {
     top: -20px; 
     left: 25px;
@@ -522,39 +542,112 @@ main {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+
+    .top-header {
+        position: relative;
+        z-index: 10;
+    }
+
+    .intro-section {
+        margin-top: 100px;
+    }
+
     .info-section {
-        gap: 24px;
-        padding: 32px 16px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .info-left {
-        width: 56px;
-        gap: 40px;
+        display: none; 
     }
 
-    .col-icon,
-    .conversa-icon {
-        width: 48px;
-    }
-
+    .donate-block,
     .support-block {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+        text-align: center;
     }
 
+    .donate-image img,
     .support-image img {
-        width: clamp(220px, 60vw, 360px);
+        max-width: 80%;
     }
 
-    .donate-block {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+    .detalhe-lateral {
+        width: 220px;
+        opacity: 0.2;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .top-header {
+        position: relative;
+        z-index: 10;
     }
 
-    .donate-image img {
-        width: clamp(220px, 60vw, 360px);
+    .intro-section {
+        margin-top: 100px;
+    }
+
+    .carousel {
+        width: 100%;
+        height: auto;
+    }
+
+    .headline {
+        font-size: 1.4rem;
+    }
+
+    .sub-headline {
+        font-size: 1rem;
+    }
+
+    .duvidas {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .cadastro p {
+        font-size: 1rem;
+    }
+
+    .btn-cadastro,
+    .btn-teste {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+    }
+
+    .detalhe-lateral {
+        display: none; 
+    }
+}
+
+@media (max-width: 480px) {
+
+    .top-header {
+        position: relative;
+        z-index: 10;
+    }
+
+    .intro-section {
+        margin-top: 100px;
+    }
+
+    .headline {
+        font-size: 1.2rem;
+    }
+
+    .duvida-item {
+        font-size: 0.9rem;
+    }
+
+    .duvida-imagem img {
+        max-width: 80px;
+    }
+
+    .cadastro p {
+        font-size: 0.9rem;
     }
 }
