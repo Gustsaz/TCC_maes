@@ -22,7 +22,6 @@ body {
     min-height: 100vh;
 }
 
-
 main {
     position: relative;
 }
@@ -283,7 +282,6 @@ main {
     max-height: 65%;
 }
 
-
 .col-icon {
     top: -20px; 
     left: 25px;
@@ -380,16 +378,21 @@ main {
 }
 
 .duvida-conteudo {
-    display: none;
-    padding: 20px 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    display: flex;
     gap: 20px;
     align-items: center;
     text-align: left;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+    padding: 0;
 }
 
 .duvida-conteudo.active {
-    display: flex;
-    animation: slideDown 0.3s ease;
+    max-height: 300px;
+    opacity: 1;
+    padding: 20px 0;
 }
 
 .duvida-texto {
@@ -555,4 +558,3 @@ main {
         width: clamp(220px, 60vw, 360px);
     }
 }
-
